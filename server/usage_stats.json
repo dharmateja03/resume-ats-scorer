@@ -1,11 +1,23 @@
 {
-  "totalUsers": 17,
+  "totalUsers": 19,
   "dailyUsers": {
     "2025-04-01": 2,
-    "2025-04-02": 6
+    "2025-04-02": 8
   },
   "lastReset": "2025-04-02",
   "recentUploads": [
+    {
+      "timestamp": "2025-04-02T21:12:36.996Z",
+      "score": 84,
+      "fileType": "application/pdf",
+      "fileName": "salesforce.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T21:01:44.716Z",
+      "score": 45,
+      "fileType": "application/pdf",
+      "fileName": "amz_de_intern.pdf"
+    },
     {
       "timestamp": "2025-04-02T19:51:43.687Z",
       "score": 65,

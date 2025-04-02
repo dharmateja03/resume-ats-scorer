@@ -2,6 +2,8 @@ import React ,{ useContext } from 'react';
 import { useNavigate,Link } from 'react-router-dom';
 import { ThemeContext } from './ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
+import ATSScoreGauge from './components/ATSScoreGauge';
+
 import './Home.css';
 
 const Home = () => {
@@ -42,6 +44,9 @@ const Home = () => {
 
         <section className="info-section" >
           <h2>Why ATS Score Matters</h2>
+          <div className="gauge-wrapper">
+    <ATSScoreGauge averageScore={78} />
+  </div>
           <div className="info-grid">
             <div className="info-card">
               <div className="info-number">75%</div>

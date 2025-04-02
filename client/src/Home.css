@@ -343,3 +343,7 @@ body {
   gap: 1rem;
   position: relative;
 }
+.gauge-wrapper {
+  margin: 2rem auto 3rem;
+  max-width: 300px;
+}
