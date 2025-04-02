@@ -1,0 +1,106 @@
+{
+  "totalUsers": 16,
+  "dailyUsers": {
+    "2025-04-01": 2,
+    "2025-04-02": 5
+  },
+  "lastReset": "2025-04-02",
+  "recentUploads": [
+    {
+      "timestamp": "2025-04-02T02:59:16.290Z",
+      "score": 75,
+      "fileType": "application/pdf",
+      "fileName": "salesforce.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T02:56:52.411Z",
+      "score": 82,
+      "fileType": "application/pdf",
+      "fileName": "Sanidhya_Mangal_Resume_data.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T02:51:38.824Z",
+      "score": 75,
+      "fileType": "application/pdf",
+      "fileName": "data_engineer_meta.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T02:43:54.642Z",
+      "score": 80,
+      "fileType": "application/pdf",
+      "fileName": "nlp.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T02:43:30.270Z",
+      "score": 45,
+      "fileType": "application/pdf",
+      "fileName": "simens_data engineer.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T02:42:57.501Z",
+      "score": 45,
+      "fileType": "application/pdf",
+      "fileName": "simens_data engineer.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T02:41:05.403Z",
+      "score": 80,
+      "fileType": "application/pdf",
+      "fileName": "salesforce.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T02:32:51.572Z",
+      "score": 85,
+      "fileType": "application/pdf",
+      "fileName": "Vardhan_Updated_Resume (2).pdf"
+    },
+    {
+      "timestamp": "2025-04-02T02:24:44.608Z",
+      "score": 77,
+      "fileType": "application/pdf",
+      "fileName": "simens_data engineer.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T00:53:48.950Z",
+      "score": 80,
+      "fileType": "application/pdf",
+      "fileName": "aws_meta_de.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T00:45:55.040Z",
+      "score": 80,
+      "fileType": "application/pdf",
+      "fileName": "simens_data engineer.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T00:30:03.356Z",
+      "score": 75,
+      "fileType": "application/pdf",
+      "fileName": "amazon data engineer.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T00:29:21.431Z",
+      "score": 45,
+      "fileType": "application/pdf",
+      "fileName": "data_engineer_meta.pdf"
+    },
+    {
+      "timestamp": "2025-04-02T00:29:08.014Z",
+      "score": 72,
+      "fileType": "application/pdf",
+      "fileName": "data_engineer_meta.pdf"
+    },
+    {
+      "timestamp": "2025-04-01T23:44:37.156Z",
+      "score": 80,
+      "fileType": "application/pdf",
+      "fileName": "DharmaDEN_RESUME.pdf"
+    },
+    {
+      "timestamp": "2025-04-01T20:32:00.384Z",
+      "score": 75,
+      "fileType": "application/pdf",
+      "fileName": "simens_data engineer.pdf"
+    }
+  ]
+}

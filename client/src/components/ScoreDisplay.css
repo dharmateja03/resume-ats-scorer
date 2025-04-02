@@ -1,0 +1,52 @@
+.score-display {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .score-circle-container {
+    flex-shrink: 0;
+  }
+  
+  .score-circle {
+    transition: stroke-dashoffset 1s ease-in-out;
+  }
+  
+  .score-details {
+    flex-grow: 1;
+  }
+  
+  .score-details h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #111;
+  }
+  
+  .score-status {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  
+  .recommendations h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4b5563;
+    margin: 0 0 0.75rem 0;
+  }
+  
+  .recommendations ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.875rem;
+    color: #4b5563;
+  }
+  
+  .recommendations li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .recommendations li:last-child {
+    margin-bottom: 0;
+  }

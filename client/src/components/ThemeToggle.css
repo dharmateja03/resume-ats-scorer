@@ -1,0 +1,25 @@
+/* ThemeToggle.css */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  color: var(--color-text);
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.theme-toggle.dark {
+  color: var(--color-text-light);
+}
+
+.theme-toggle.dark:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

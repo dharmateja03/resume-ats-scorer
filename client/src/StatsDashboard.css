@@ -1,0 +1,185 @@
+/* StatsDashboard.css */
+.stats-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #1a202c;
+    background-color: #f7fafc;
+    min-height: 100vh;
+  }
+  
+  .stats-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+  }
+  
+  .stats-header h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stats-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .stats-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stats-card h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #718096;
+    margin: 0 0 0.75rem 0;
+  }
+  
+  .stats-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+  }
+  
+  .percent {
+    font-size: 1.25rem;
+    color: #718096;
+    margin-left: 2px;
+  }
+  
+  .total-users .stats-number {
+    color: #3182ce;
+  }
+  
+  .today-users .stats-number {
+    color: #38a169;
+  }
+  
+  .average-score .stats-number {
+    color: #dd6b20;
+  }
+  
+  .stats-chart-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .stats-chart-container h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .stats-chart {
+    height: 300px;
+  }
+  
+  .recent-uploads {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recent-uploads h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .uploads-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .uploads-table th, 
+  .uploads-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .uploads-table th {
+    font-weight: 600;
+    color: #718096;
+    font-size: 0.875rem;
+  }
+  
+  .uploads-table tbody tr:hover {
+    background-color: #f7fafc;
+  }
+  
+  .score-high {
+    color: #38a169;
+    font-weight: 600;
+  }
+  
+  .score-medium {
+    color: #dd6b20;
+    font-weight: 600;
+  }
+  
+  .score-low {
+    color: #e53e3e;
+    font-weight: 600;
+  }
+  
+  .no-uploads {
+    color: #718096;
+    text-align: center;
+    padding: 2rem 0;
+    font-style: italic;
+  }
+  
+  .stats-loading,
+  .stats-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.125rem;
+    color: #718096;
+  }
+  
+  .stats-error {
+    color: #e53e3e;
+  }
+  
+  @media (max-width: 768px) {
+    .stats-dashboard {
+      padding: 1rem;
+    }
+    
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .stats-number {
+      font-size: 2rem;
+    }
+    
+    .uploads-table th:nth-child(3),
+    .uploads-table td:nth-child(3) {
+      display: none;
+    }
+  }
