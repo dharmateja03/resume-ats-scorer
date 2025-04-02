@@ -24,6 +24,29 @@ body {
     color: #111;
     margin: 0;
   }
+  .hero-section h1 {
+    color: var(--color-text);  
+  }
+  
+  .subtitle {
+    color: var(--color-text-secondary);  
+  }
+  .info-section h2 {
+    color: var(--color-text); 
+  }
+  
+  .info-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+  }
+  
+  .info-number {
+    color: var(--color-text);  
+  }
+  
+  .info-card p {
+    color: var(--color-text-secondary);  
+  }
   
   main {
     display: grid;
@@ -259,6 +282,15 @@ body {
     --color-card-bg: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --transition-standard: all 0.2s ease;
+    --color-button-text: #ffffff;
+    --color-logo: #000000;
+    --color-button-bg: #000000;
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
   }
   
   .dark-theme {
@@ -268,12 +300,28 @@ body {
     --color-background-secondary: #1e1e1e;
     --color-border: #333333;
     --color-primary: #ffffff;
+    --color-logo: #ffffff;
     --color-primary-light: #dddddd;
     --color-card-bg: #1e1e1e;
+    --color-button-text: #111111;
+    --color-button-bg: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.4);
   }
-
-
+  .dark-theme .primary-button {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  .dark-theme .cta-button {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  .home-container {
+    background-color: var(--color-background);
+  }
+  
+  .home-main {
+    background-color: var(--color-background);
+  }
   .home-header {
     border-bottom: 1px solid var(--color-border);
   }
@@ -287,8 +335,38 @@ body {
   
   .cta-section {
     background-color: var(--color-background-secondary);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .cta-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    color: var(--color-text); 
   }
   
+  .cta-section p {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary); 
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .dark-theme .cta-section {
+    background-color: var(--color-background-secondary) !important;
+  }
+  .factors-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.02em;
+    color: var(--color-text); 
+    text-align: center;
+  }
   .footer-links a {
     color: var(--color-text-secondary);
   }
@@ -296,6 +374,13 @@ body {
   .primary-button {
     background-color: var(--color-primary);
     color: var(--color-background);
+    font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-standard);
   }
   
   .secondary-button {
@@ -316,4 +401,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+  }
+  .logo {
+    color: var(--color-logo);
   }

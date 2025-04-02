@@ -1,5 +1,6 @@
 /* ThemeToggle.css */
 .theme-toggle {
+  position: relative; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,6 +11,8 @@
   border-radius: 50%;
   color: var(--color-text);
   transition: all 0.2s ease;
+  width: 32px; 
+  height: 32px; 
 }
 
 .theme-toggle:hover {

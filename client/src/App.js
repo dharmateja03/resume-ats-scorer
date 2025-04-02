@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext , useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './Home';
@@ -48,6 +48,14 @@ function ScoringPage() {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    // This applies the dark-theme class to the root html element
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark-theme');
+    } else {
+      document.documentElement.classList.remove('dark-theme');
+    }
+  }, [isDarkMode]);
 
   return (
     <div className="scoring-page">

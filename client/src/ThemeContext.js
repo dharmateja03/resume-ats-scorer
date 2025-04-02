@@ -24,10 +24,13 @@ export const ThemeProvider = ({ children }) => {
     
     if (theme === 'dark') {
       document.documentElement.classList.add('dark-theme');
+      document.body.classList.add('dark-theme');
     } else {
       document.documentElement.classList.remove('dark-theme');
+      document.body.classList.remove('dark-theme');
     }
   }, [theme]);
+  
 
   // Toggle between light and dark themes
   const toggleTheme = () => {

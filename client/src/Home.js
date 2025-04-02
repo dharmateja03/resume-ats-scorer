@@ -12,12 +12,20 @@ const Home = () => {
   const goToScorePage = () => {
     navigate('/score');
   };
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   return (
     <div className="home-container">
       <header className="home-header">
         <div className="logo">ATS Score</div>
-        <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-        <button className="cta-button" onClick={goToScorePage} >Get Score Now</button>
+        <div className="header-right">
+    <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+    <button className="cta-button" onClick={goToScorePage}>Get Score Now</button>
+  </div>
       </header>
 
       <main className="home-main">
@@ -28,11 +36,11 @@ const Home = () => {
           </p>
           <div className="hero-actions">
             <button className="primary-button" onClick={goToScorePage} >Upload Resume</button>
-            <button className="secondary-button">Learn More ↓</button>
+            <button className="secondary-button" onClick={() => scrollToSection('info-section')}>Learn More ↓</button>
           </div>
         </section>
 
-        <section className="info-section">
+        <section className="info-section" >
           <h2>Why ATS Score Matters</h2>
           <div className="info-grid">
             <div className="info-card">
@@ -56,7 +64,7 @@ const Home = () => {
 
         <section className="factors-section">
           <h2>Key Factors in ATS Scoring</h2>
-          <div className="factors-grid">
+          <div className="factors-grid" id="info-section">
             <div className="factor-card">
               <h3>Formatting</h3>
               <p>Simple, clean layouts without tables, graphics, or complex formatting elements are preferred by ATS systems.</p>
@@ -65,7 +73,7 @@ const Home = () => {
               <h3>Keywords</h3>
               <p>Including relevant industry and job-specific keywords that match the job description improves visibility.</p>
             </div>
-            <div className="factor-card">
+            <div className="factor-card" >
               <h3>Section Headings</h3>
               <p>Clear, standard section headings (Experience, Education, Skills) help ATS properly categorize your information.</p>
             </div>
