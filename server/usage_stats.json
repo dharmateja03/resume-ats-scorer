@@ -1,11 +1,37 @@
 {
-  "totalUsers": 19,
+  "totalUsers": 23,
   "dailyUsers": {
     "2025-04-01": 2,
-    "2025-04-02": 8
+    "2025-04-02": 8,
+    "2025-04-03": 0,
+    "2025-04-04": 4
   },
-  "lastReset": "2025-04-02",
+  "lastReset": "2025-04-03",
   "recentUploads": [
+    {
+      "timestamp": "2025-04-04T21:25:44.752Z",
+      "score": 75,
+      "fileType": "application/pdf",
+      "fileName": "salesforce.pdf"
+    },
+    {
+      "timestamp": "2025-04-04T21:24:49.667Z",
+      "score": 90,
+      "fileType": "application/pdf",
+      "fileName": "Vardhan_Updated_Resume (2).pdf"
+    },
+    {
+      "timestamp": "2025-04-04T21:21:27.613Z",
+      "score": 80,
+      "fileType": "application/pdf",
+      "fileName": "Resume_Shobhit_Asimkumar_Sinha_SD.pdf"
+    },
+    {
+      "timestamp": "2025-04-04T21:19:00.058Z",
+      "score": 80,
+      "fileType": "application/pdf",
+      "fileName": "simens_data engineer.pdf"
+    },
     {
       "timestamp": "2025-04-02T21:12:36.996Z",
       "score": 84,

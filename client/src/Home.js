@@ -44,9 +44,7 @@ const Home = () => {
 
         <section className="info-section" >
           <h2>Why ATS Score Matters</h2>
-          <div className="gauge-wrapper">
-    <ATSScoreGauge averageScore={78} />
-  </div>
+          
           <div className="info-grid">
             <div className="info-card">
               <div className="info-number">75%</div>

@@ -76,6 +76,11 @@ function ScoringPage() {
         <div className="upload-section">
           <FileUpload onFileUpload={handleFileUpload} />
           {error && <p className="error-message">{error}</p>}
+          {file && !loading && (
+        <div className="preview-section">
+          <ResumePreview file={file} />
+        </div>
+      )}
         </div>
         
         <div className="results-section">
@@ -91,11 +96,11 @@ function ScoringPage() {
         </div>
       </main>
       
-      {file && !loading && (
+      {/* {file && !loading && (
         <div className="preview-section">
           <ResumePreview file={file} />
         </div>
-      )}
+      )} */}
     </div>
   );
 }

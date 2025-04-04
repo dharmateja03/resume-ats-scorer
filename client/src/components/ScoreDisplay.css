@@ -1,52 +1,45 @@
-.score-display {
-    width: 100%;
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .score-circle-container {
-    flex-shrink: 0;
-  }
-  
-  .score-circle {
-    transition: stroke-dashoffset 1s ease-in-out;
-  }
-  
-  .score-details {
-    flex-grow: 1;
-  }
-  
-  .score-details h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem 0;
-    color: #111;
-  }
-  
-  .score-status {
-    font-size: 1.125rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-  }
-  
-  .recommendations h3 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #4b5563;
-    margin: 0 0 0.75rem 0;
-  }
-  
-  .recommendations ul {
-    margin: 0;
-    padding-left: 1.25rem;
-    font-size: 0.875rem;
-    color: #4b5563;
-  }
-  
-  .recommendations li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .recommendations li:last-child {
-    margin-bottom: 0;
-  }
+.recommendations {
+  background-color: var(--color-background-secondary, #f9f9f9);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-top: 1.5rem;
+  border-left: 3px solid var(--color-primary, #000000);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.recommendations h3 {
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--color-text, #0b0d11);
+  margin: 0 0 0.75rem 0;
+}
+
+.recommendations ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.975rem;
+  color: var(--color-text, #01070f);
+  list-style-type: none; /* Remove default bullets */
+}
+
+.recommendations li {
+  margin-bottom: 0.5rem;
+  font-size: 0.975rem;
+  color: var(--color-text, #01070f);
+  position: relative;
+}
+
+.recommendations li:before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0.5rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-primary, #000000);
+}
+
+.recommendations li:last-child {
+  margin-bottom: 0;
+}
