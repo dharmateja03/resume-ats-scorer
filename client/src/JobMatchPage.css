@@ -1,0 +1,437 @@
+/* JobMatchPage.css - Minimalist Design */
+/* Add this to your CSS file */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.fontshare.com/wf/XGFK2FFGLWB54JNFOYWL6YV5G6GX534I/I5HLEGSRQYT575OVW6RR4SQTZAJPCM7G/MLYCLNZW2NSIETJRCD73VGCN6NZLF4HO.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --font-primary: 'Satoshi', sans-serif;
+}
+.job-match-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--color-text);
+}
+
+/* Header */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--color-primary) 0%, #4a6cf7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--color-primary);
+}
+
+/* Page intro */
+.page-intro {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page-intro h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.page-intro p {
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Input container */
+.input-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-field label {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* File upload */
+.file-drop-area {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--color-background);
+  color: var(--color-text-secondary);
+  transition: all 0.2s ease;
+  min-height: 135px;
+}
+
+.file-drop-area.drag-over {
+  border-color: var(--color-primary);
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.dark-theme .file-drop-area.drag-over {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.file-drop-area p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.file-drop-area p button {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-drop-area.has-file {
+  padding: 1rem;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.file-name {
+  font-size: 0.875rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.remove-file {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.remove-file:hover {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Job description textarea */
+.job-description-input {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  resize: vertical;
+  font-family: inherit;
+  font-size: 0.875rem;
+  min-height: 135px;
+  width: 100%;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.job-description-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Analyze container */
+.analyze-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.analyze-button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-width: 180px;
+}
+
+.analyze-button:hover:not(:disabled) {
+  background-color: var(--color-primary-light);
+}
+
+.analyze-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Results container */
+.results-container {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.results-header {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.match-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--color-background-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.score-circle::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 5px solid;
+  border-color: var(--color-primary) var(--color-primary) var(--color-border) var(--color-border);
+  transform: rotate(calc(3.6deg * var(--percent, 0)));
+  transition: transform 1s ease;
+}
+
+.score-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.score-unit {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+.score-label {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.results-body {
+  padding: 1.5rem;
+}
+
+/* Keyword section */
+.keyword-section {
+  margin-bottom: 2rem;
+}
+
+.keyword-section h2,
+.recommendations-section h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.keyword-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.keyword-column h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  color: var(--color-text-secondary);
+}
+
+.keyword-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.keyword-tag {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.keyword-tag.matched {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.dark-theme .keyword-tag.matched {
+  background-color: rgba(16, 185, 129, 0.2);
+}
+
+.keyword-tag.missing {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.dark-theme .keyword-tag.missing {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+.no-keywords {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* Recommendations section */
+.recommendations-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.recommendations-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.recommendations-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .job-match-page {
+    padding: 1rem;
+  }
+  
+  .input-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .keyword-columns {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .main-nav {
+    gap: 1rem;
+  }
+  
+  .main-nav a {
+    font-size: 0.875rem;
+  }
+}
+.file-drop-area p button {
+  background: var(--color-background-secondary, #f3f4f6);
+  border: 6px solid var(--color-border);
+  color: var(--color-primary);
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.975rem;
+  transition: background-color 0.2s ease;
+}
+
+.file-drop-area p button:hover {
+  background-color: var(--color-border);
+}
