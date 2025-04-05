@@ -9,6 +9,7 @@ import StatsPage from './StatsPage';
 import { useNavigate } from 'react-router-dom';
 import ThemeToggle from './components/ThemeToggle';
 import { ThemeContext } from './ThemeContext';
+import JobMatchPage from './JobMatchPage';
 
 function ScoringPage() {
   const [file, setFile] = useState(null);
@@ -115,6 +116,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/score" element={<ScoringPage />} />
         <Route path="/stats" element={<StatsPage />} />
+        <Route path="/job-match" element={<JobMatchPage />} />
       </Routes>
     </Router>
     </div>

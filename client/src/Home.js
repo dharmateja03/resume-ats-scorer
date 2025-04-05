@@ -26,6 +26,10 @@ const Home = () => {
         <div className="logo">ATS Score</div>
         <div className="header-right">
     <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+    <nav className="main-nav">
+      <button className="nav-button" onClick={() => navigate('/score')}>Score Resume</button>
+      <button className="nav-button" onClick={() => navigate('/job-match')}>Job Match</button>
+    </nav>
     <button className="cta-button" onClick={goToScorePage}>Get Score Now</button>
   </div>
       </header>
@@ -106,6 +110,7 @@ const Home = () => {
         <p>© 2025 ATS Score. All rights reserved.</p>
         <div className="footer-links">
           <a href="#">Privacy</a>
+          <a href="https://www.linkedin.com/in/dharmatejasamudrala/">Contact</a>
           <a href="#">Terms</a>
           <a href="#">About</a>
         </div>

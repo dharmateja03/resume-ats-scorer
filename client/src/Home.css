@@ -347,3 +347,39 @@ body {
   margin: 2rem auto 3rem;
   max-width: 300px;
 }
+/* Logo styling */
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--color-primary) 0%, #4a6cf7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Main navigation styling */
+.main-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-button {
+  background: transparent;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-theme .nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

@@ -228,6 +228,126 @@ async function analyzeResumeWithClaude(resumeText) {
     };
   }
 }
+// Add this to your server.js file
+
+// Job Match API endpoint
+app.post('/api/job-match', upload.single('resume'), async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: 'No resume file uploaded' });
+    }
+
+    if (!req.body.jobDescription) {
+      return res.status(400).json({ error: 'No job description provided' });
+    }
+
+    const filePath = req.file.path;
+    const fileType = req.file.mimetype;
+    const jobDescription = req.body.jobDescription;
+
+    // Extract text from the resume
+    const resumeText = await extractTextFromFile(filePath, fileType);
+    
+    // Analyze the job match using Claude API
+    const analysis = await analyzeJobMatch(resumeText, jobDescription);
+    
+    // Clean up the uploaded file
+    fs.unlinkSync(filePath);
+
+    res.json(analysis);
+  } catch (error) {
+    console.error('Error processing job match:', error);
+    res.status(500).json({ error: 'Failed to process job match request' });
+  }
+});
+
+// Function to analyze job match using Claude API
+async function analyzeJobMatch(resumeText, jobDescription) {
+  try {
+    // Truncate texts to avoid exceeding token limits
+    const truncatedResume = resumeText.substring(0, 8000);
+    const truncatedJobDesc = jobDescription.substring(0, 4000);
+    
+    const response = await axios.post(
+      'https://api.anthropic.com/v1/messages',
+      {
+        model: 'claude-3-haiku-20240307',
+        max_tokens: 1500,
+        messages: [
+          {
+            role: 'user',
+            content: `I need to compare a resume with a job description to determine how well they match. I'll provide both the resume text and job description. I need you to:
+
+1. Extract important keywords from the job description
+2. Check which of these keywords appear in the resume
+3. Calculate a match percentage (0-100%)
+4. Generate a list of missing keywords that should be added to the resume
+5. Provide 3-5 specific recommendations for improving the resume
+
+Resume:
+${truncatedResume}
+
+Job Description:
+${truncatedJobDesc}
+
+Respond with ONLY valid JSON in this exact format with no additional text:
+{
+  "matchPercentage": 65,
+  "matchedKeywords": ["keyword1", "keyword2", "keyword3"],
+  "missingKeywords": ["keyword4", "keyword5", "keyword6"],
+  "recommendations": [
+    "Specific recommendation 1",
+    "Specific recommendation 2",
+    "Specific recommendation 3"
+  ]
+}`
+          }
+        ]
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': process.env.ANTHROPIC_API_KEY,
+          'anthropic-version': '2023-06-01'
+        }
+      }
+    );
+    
+    // Extract and parse the JSON response
+    const content = response.data.content[0].text;
+    
+    try {
+      // Try to extract just the JSON part from the response
+      let jsonContent = content;
+      const jsonMatch = content.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        jsonContent = jsonMatch[0];
+      }
+      
+      const parsedData = JSON.parse(jsonContent);
+      return parsedData;
+    } catch (parseError) {
+      console.error("JSON parsing error:", parseError);
+      console.error("Raw response content:", content);
+      throw new Error("Failed to parse Claude API response as JSON");
+    }
+  } catch (error) {
+    console.error('Error analyzing job match with Claude:', error);
+    
+    // Return a fallback response if the API call fails
+    return {
+      matchPercentage: 50,
+      matchedKeywords: ["skill", "experience", "education"],
+      missingKeywords: ["specific skill", "technical requirement", "tool"],
+      recommendations: [
+        "Add more specific keywords from the job description",
+        "Quantify your achievements with metrics and results",
+        "Include technical skills that are explicitly mentioned in the job post",
+        "Tailor your resume summary to match the job requirements"
+      ]
+    };
+  }
+}
 //testing
 // Add this near your other routes
 // app.get('/api/test-claude', async (req, res) => {
