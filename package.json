@@ -1,8 +1,9 @@
 {
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
     "eject": "react-scripts eject"
   },
   "dependencies": {
