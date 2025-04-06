@@ -4,5 +4,12 @@
     "framework": "create-react-app",
     "rewrites": [
       { "source": "/(.*)", "destination": "/" }
-    ]
+    ],
+    "version": 2,
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" }
+  ],
+  "builds": [
+    { "src": "server.js", "use": "@vercel/node" }
+  ]
   }
