@@ -47,7 +47,7 @@ const port = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors({
-  origin: 'https://resume-ats-scorer-q67j3lzpt-dharmateja03s-projects.vercel.app/', 
+  origin: 'https://resume-ats-scorer.vercel.app/', 
   methods: ['GET', 'POST'],
   credentials: true
 }));
