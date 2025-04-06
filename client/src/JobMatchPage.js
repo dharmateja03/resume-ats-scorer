@@ -92,7 +92,7 @@ const handleJobUrlChange = (e) => {
       formData.append('resume', resumeFile);
       formData.append('jobDescription', jobDescription);
       
-      const response = await fetch('http://localhost:3001/api/job-match', {
+      const response = await fetch('/api/job-match', {
         method: 'POST',
         body: formData,
       });

@@ -31,7 +31,7 @@ function ScoringPage() {
       formData.append('resume', uploadedFile);
       
       // Call to your backend API
-      const response = await fetch('http://localhost:3001/api/analyze-resume', {
+      const response = await fetch('/api/analyze-resume', {
         method: 'POST',
         body: formData,
       });
