@@ -32,7 +32,7 @@ function ScoringPage() {
       
       // Call to your backend API
       const response = await fetch('https://resume-ats-scorer.onrender.com/api/analyze-resume', {
-        method: 'POST',
+        method: 'GET',
         body: formData,
       });
       
