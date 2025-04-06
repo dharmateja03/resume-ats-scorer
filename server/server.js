@@ -47,7 +47,7 @@ const port = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors({
-  origin: 'https://your-frontend-domain.vercel.app', // Replace with your Vercel frontend URL
+  origin: 'https://resume-ats-scorer-q67j3lzpt-dharmateja03s-projects.vercel.app/', 
   methods: ['GET', 'POST'],
   credentials: true
 }));
