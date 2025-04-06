@@ -1,14 +1,39 @@
 {
-  "totalUsers": 23,
+  "totalUsers": 27,
   "dailyUsers": {
     "2025-04-01": 2,
     "2025-04-02": 8,
     "2025-04-03": 0,
     "2025-04-04": 4,
-    "2025-04-05": 0
+    "2025-04-05": 0,
+    "2025-04-06": 4
   },
   "lastReset": "2025-04-05",
   "recentUploads": [
+    {
+      "timestamp": "2025-04-06T14:27:31.657Z",
+      "score": 85,
+      "fileType": "application/pdf",
+      "fileName": "salesforce.pdf"
+    },
+    {
+      "timestamp": "2025-04-06T14:18:35.009Z",
+      "score": 65,
+      "fileType": "application/pdf",
+      "fileName": "simens_data engineer.pdf"
+    },
+    {
+      "timestamp": "2025-04-06T14:14:06.053Z",
+      "score": 75,
+      "fileType": "application/pdf",
+      "fileName": "simens_data engineer.pdf"
+    },
+    {
+      "timestamp": "2025-04-06T14:08:52.586Z",
+      "score": 80,
+      "fileType": "application/pdf",
+      "fileName": "Sanidhya_Mangal_Resume_data.pdf"
+    },
     {
       "timestamp": "2025-04-04T21:25:44.752Z",
       "score": 75,

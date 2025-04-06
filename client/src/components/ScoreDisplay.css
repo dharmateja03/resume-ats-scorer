@@ -1,45 +1,128 @@
-.recommendations {
-  background-color: var(--color-background-secondary, #f9f9f9);
+/* ScoreDisplay.css */
+.score-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.score-card {
+  background-color: var(--color-background, white);
+  border: 1px solid var(--color-border, #e5e5e5);
   border-radius: 8px;
-  padding: 1rem 1.5rem;
-  margin-top: 1.5rem;
-  border-left: 3px solid var(--color-primary, #000000);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
-.recommendations h3 {
-  font-size: 0.93rem;
+.card-title {
+  font-size: 1.25rem;
   font-weight: 600;
-  color: var(--color-text, #0b0d11);
-  margin: 0 0 0.75rem 0;
+  padding: 1rem;
+  margin: 0;
+  border-bottom: 1px solid var(--color-border, #e5e5e5);
+  background-color: var(--color-background-secondary, #f5f5f5);
 }
 
-.recommendations ul {
+.score-content, .card-content {
+  padding: 1rem;
+}
+
+.score-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.score-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--color-background-secondary, #f5f5f5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.score-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.score-label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.score-description {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #555);
+  margin: 0;
+  max-width: 400px;
+}
+
+.issue-item {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.issue-item:last-child {
+  margin-bottom: 0;
+}
+
+.recommendations-list {
   margin: 0;
   padding-left: 1.25rem;
-  font-size: 0.975rem;
-  color: var(--color-text, #01070f);
-  list-style-type: none; /* Remove default bullets */
 }
 
-.recommendations li {
-  margin-bottom: 0.5rem;
-  font-size: 0.975rem;
-  color: var(--color-text, #01070f);
-  position: relative;
+.recommendations-list li {
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
-.recommendations li:before {
-  content: "";
-  position: absolute;
-  left: -1rem;
-  top: 0.5rem;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--color-primary, #000000);
-}
-
-.recommendations li:last-child {
+.recommendations-list li:last-child {
   margin-bottom: 0;
+}
+
+/* Loading state */
+.score-loading {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--color-background, white);
+  border: 1px solid var(--color-border, #e5e5e5);
+  border-radius: 8px;
+}
+
+.score-loading p {
+  margin: 0 0 1.5rem 0;
+  font-size: 0.875rem;
+}
+
+.loading-bar {
+  height: 4px;
+  background-color: var(--color-border, #e5e5e5);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.loading-progress {
+  height: 100%;
+  width: 30%;
+  background-color: var(--color-primary, #000);
+  animation: loading 1.5s infinite ease-in-out;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
 }

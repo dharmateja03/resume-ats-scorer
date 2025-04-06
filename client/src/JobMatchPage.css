@@ -1,14 +1,18 @@
 /* JobMatchPage.css - Minimalist Design */
 /* Add this to your CSS file */
-@font-face {
-  font-family: 'Satoshi';
-  src: url('https://cdn.fontshare.com/wf/XGFK2FFGLWB54JNFOYWL6YV5G6GX534I/I5HLEGSRQYT575OVW6RR4SQTZAJPCM7G/MLYCLNZW2NSIETJRCD73VGCN6NZLF4HO.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700&display=swap');
 
 :root {
-  --font-primary: 'Satoshi', sans-serif;
+  --font-primary: 'Inter', sans-serif;
+  --font-headings: 'Manrope', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headings);
+}
+
+body {
+  font-family: var(--font-primary);
 }
 .job-match-page {
   max-width: 1000px;

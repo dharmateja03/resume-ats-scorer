@@ -1,11 +1,10 @@
+// ScoreDisplay.js
 import React from 'react';
 import './ScoreDisplay.css';
 
-const ScoreDisplay = ({ score }) => {
-  
+const ScoreDisplay = ({ score, loading }) => {
   const scoreValue = typeof score === 'number' ? score : score.score;
   
- 
   const getScoreColor = (value) => {
     if (value >= 80) return '#4CAF50'; // Green for high scores
     if (value >= 60) return '#FFC107'; // Yellow for medium scores
@@ -14,122 +13,61 @@ const ScoreDisplay = ({ score }) => {
 
   const scoreColor = getScoreColor(scoreValue);
   
-  const radius = 40;
-  const circumference = 2 * Math.PI * radius;
-  const dashOffset = circumference - (scoreValue / 100) * circumference;
-
-  const getDefaultRecommendations = (value) => {
-    if (value >= 80) {
-      return [
-        "Great job! Your resume is well-optimized for ATS systems.",
-        "Consider tailoring specific keywords for each job application."
-      ];
-    } else if (value >= 60) {
-      return [
-        "Your resume is likely to pass ATS screening but could use improvements.",
-        "Add more industry-specific keywords relevant to your target positions.",
-        "Ensure your skills section clearly lists technical competencies."
-      ];
-    } else {
-      return [
-        "Your resume may struggle to pass ATS screening systems.",
-        "Avoid using tables, headers/footers, and complex formatting.",
-        "Include more relevant keywords from the job descriptions.",
-        "Use standard section headings (Experience, Education, Skills)."
-      ];
-    }
+  const getScoreLabel = (value) => {
+    if (value >= 80) return 'Excellent';
+    if (value >= 60) return 'Good';
+    return 'Needs Improvement';
   };
 
-  const recommendations = typeof score === 'object' && score.improvement_areas 
-    ? score.improvement_areas 
-    : getDefaultRecommendations(scoreValue);
+  if (loading) {
+    return (
+      <div className="score-loading">
+        <p>Analyzing your resume...</p>
+        <div className="loading-bar">
+          <div className="loading-progress"></div>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="score-display">
-      <div className="score-circle-container">
-        <svg width="120" height="120" viewBox="0 0 120 120">
-          {/* Background circle */}
-          <circle 
-            cx="60" 
-            cy="60" 
-            r={radius} 
-            fill="transparent" 
-            stroke="#e0e0e0" 
-            strokeWidth="8"
-          />
-          
-          {/* Score circle */}
-          <circle 
-            cx="60" 
-            cy="60" 
-            r={radius} 
-            fill="transparent" 
-            stroke={scoreColor} 
-            strokeWidth="8" 
-            strokeLinecap="round" 
-            strokeDasharray={circumference} 
-            strokeDashoffset={dashOffset}
-            transform="rotate(-90 60 60)"
-            className="score-circle"
-          />
-          
-          {/* Score text */}
-          <text 
-            x="60" 
-            y="60" 
-            fontFamily="Arial" 
-            fontSize="24" 
-            fontWeight="bold"
-            fill={scoreColor} 
-            textAnchor="middle" 
-            dominantBaseline="middle"
-          >
-            {scoreValue}
-          </text>
-          
-          {/* Percentage symbol */}
-          <text 
-            x="78" 
-            y="45" 
-            fontFamily="Arial" 
-            fontSize="12" 
-            fill={scoreColor} 
-            textAnchor="middle" 
-            dominantBaseline="middle"
-          >
-            %
-          </text>
-        </svg>
-      </div>
-      
-      <div className="score-details">
-        <h2>ATS Compatibility Score</h2>
-        <div className="score-status" style={{ color: scoreColor }}>
-          {scoreValue >= 80 ? 'Excellent' : scoreValue >= 60 ? 'Good' : 'Needs Improvement'}
+    <div className="score-container">
+      <div className="score-card">
+        <h2 className="card-title">ATS Compatibility Score</h2>
+        <div className="score-content">
+          <div className="score-circle">
+            <span className="score-value">{scoreValue}</span>
+          </div>
+          <div className="score-label" style={{ color: scoreColor }}>{getScoreLabel(scoreValue)}</div>
+          <p className="score-description">This score indicates how well your resume is likely to perform when processed by Applicant Tracking Systems used by employers.</p>
         </div>
-        
-        {typeof score === 'object' && score.analysis && (
-          <div className="analysis-details">
-            <h3>Detailed Analysis:</h3>
-            <ul>
-              <li><strong>Formatting:</strong> {score.analysis.formatting}</li>
-              <li><strong>Keywords:</strong> {score.analysis.keywords}</li>
-              <li><strong>Structure:</strong> {score.analysis.structure}</li>
-              <li><strong>Contact Info:</strong> {score.analysis.contact_info}</li>
-              <li><strong>Content Quality:</strong> {score.analysis.content_quality}</li>
+      </div>
+
+      {typeof score === 'object' && score.analysis && (
+        <div className="score-card">
+          <h2 className="card-title">Issues Identified</h2>
+          <div className="card-content">
+            <p className="issue-item"><strong>Formatting:</strong> {score.analysis.formatting}</p>
+            <p className="issue-item"><strong>Keywords:</strong> {score.analysis.keywords}</p>
+            <p className="issue-item"><strong>Structure:</strong> {score.analysis.structure}</p>
+            <p className="issue-item"><strong>Contact Info:</strong> {score.analysis.contact_info}</p>
+            <p className="issue-item"><strong>Content Quality:</strong> {score.analysis.content_quality}</p>
+          </div>
+        </div>
+      )}
+      
+      {typeof score === 'object' && score.improvement_areas && score.improvement_areas.length > 0 && (
+        <div className="score-card">
+          <h2 className="card-title">Recommendations</h2>
+          <div className="card-content">
+            <ul className="recommendations-list">
+              {score.improvement_areas.map((rec, index) => (
+                <li key={index}>{rec}</li>
+              ))}
             </ul>
           </div>
-        )}
-        
-        <div className="recommendations">
-          <h3>Recommendations:</h3>
-          <ul>
-            {recommendations.map((rec, index) => (
-              <li key={index}>{rec}</li>
-            ))}
-          </ul>
         </div>
-      </div>
+      )}
     </div>
   );
 };

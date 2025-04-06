@@ -25,12 +25,13 @@ const Home = () => {
       <header className="home-header">
         <div className="logo">ATS Score</div>
         <div className="header-right">
-    <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
     <nav className="main-nav">
       <button className="nav-button" onClick={() => navigate('/score')}>Score Resume</button>
       <button className="nav-button" onClick={() => navigate('/job-match')}>Job Match</button>
     </nav>
     <button className="cta-button" onClick={goToScorePage}>Get Score Now</button>
+    <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+
   </div>
       </header>
 
