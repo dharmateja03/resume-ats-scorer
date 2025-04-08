@@ -441,6 +441,7 @@ Respond with ONLY valid JSON in this exact format with no additional text:
 //API endpoint to analyze resume
 app.post('/api/analyze-resume', upload.single('resume'), async (req, res) => {
   try {
+    console.log("Request received");
     if (!req.file) {
       console.log("Error: No file uploaded");
       return res.status(400).json({ error: 'No file uploaded' });

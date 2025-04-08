@@ -92,7 +92,7 @@ const handleJobUrlChange = (e) => {
       formData.append('resume', resumeFile);
       formData.append('jobDescription', jobDescription);
       
-      const response = await fetch('https://resume-ats-scorer.onrender.com/api/job-match', {
+      const response = await fetch('https://server-floral-sunset-5103.fly.dev/api/job-match', {
         method: 'POST',
         body: formData,
       });
