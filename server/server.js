@@ -43,7 +43,7 @@ try {
 
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 8080;
 
 // Middleware
 app.use(cors({
@@ -544,6 +544,6 @@ function updateStats(score, fileInfo) {
   //console.log(`Stats updated: Total: ${stats.totalUsers}, Today: ${stats.dailyUsers[today]}`);
 }
 // Start the server
-app.listen(port, () => {
-  //console.log(`Server running on port ${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}, listening on all interfaces`);
 });
